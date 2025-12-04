@@ -62,7 +62,7 @@ def formater_en_blocs(texte, taille):
 
 
 
-def compter_mots(texte):
+def compter_mots(texte: str) ->int:
     """
     Compte le nombre de mots dans une phrase.
     
@@ -82,7 +82,13 @@ def compter_mots(texte):
         >>> compter_mots("Un   deux")
         2
     """
-    return NotImplemented
+    texte_propre = texte.strip() #Enlève les espaces en début et fin de texte
+    if texte_propre == False: #Si chaine vide après nettoyage
+        return 0
+
+    mots = texte_propre.split() #Réduit plusieurs espace en un
+
+    return len(mots) #retourne nbr de mots
 
 
 
