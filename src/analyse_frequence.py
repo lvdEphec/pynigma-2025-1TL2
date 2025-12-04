@@ -144,4 +144,14 @@ def est_palindrome(texte):
         >>> est_palindrome("Esope reste ici et se repose")
         True
     """
-    return NotImplemented
+    lowere=texte.upper()
+    final="".join(lowere.split())
+    y=len(final)
+    x=0
+    while x<y:
+        if final[x]!=final[len(final)-1-x]:
+            return False
+
+        x+=1
+
+    return True
