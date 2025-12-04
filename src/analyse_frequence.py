@@ -16,7 +16,14 @@ def compter_lettres(texte):
         >>> compter_lettres("Ba ba!")
         {'B': 2, 'A': 2}
     """
-    return NotImplemented
+    compteur = {}
+    monTexte = ''.join(filter(str.isalpha, texte.strip()))
+    for lettre in monTexte:
+        if lettre.upper() in compteur:
+            compteur[lettre.upper()] += 1
+        else:
+            compteur[lettre.upper()] = 1
+    return compteur
 
 
 
